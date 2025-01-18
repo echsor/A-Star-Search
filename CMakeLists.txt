@@ -9,4 +9,6 @@ add_executable(A_star main.cpp
         AStar.cpp
         AStar.h
         ReadGraph.cpp
-        ReadGraph.h)
+        ReadGraph.h
+        ReadHeuristic.cpp
+        ReadHeuristic.h)

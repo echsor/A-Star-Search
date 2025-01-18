@@ -3,7 +3,7 @@
 #include "ReadHeuristic.h"
 
 int main() {
-    std::map<std::string, std::vector<std::string>> g = buildGraph("graphs/graph1.txt", GraphEdgeType::undirected);
+    std::map<std::string, std::vector<std::string>> g = readGraph("graphs/graph1.txt", GraphEdgeType::undirected);
     for (const auto& [k, vec]: g) {
         std::cout << "node = " << k << " has neighbors =";
         for (const auto &neighbor: vec) {

@@ -19,7 +19,7 @@ enum class GraphEdgeType {
  * @param graphEdgeType The type of edges present in the graph.
  * @return The adjacency list.
  */
-std::map<std::string, std::vector<std::string>> buildGraph(const std::string &path, GraphEdgeType graphEdgeType);
+std::map<std::string, std::vector<std::string>> readGraph(const std::string &path, GraphEdgeType graphEdgeType);
 
 
 #endif //READGRAPH_H

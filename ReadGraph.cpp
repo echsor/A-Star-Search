@@ -1,7 +1,7 @@
 #include "ReadGraph.h"
 
 
-std::map<std::string, std::vector<std::string>> buildGraph(const std::string &path, const GraphEdgeType graphEdgeType) {
+std::map<std::string, std::vector<std::string>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType) {
     std::ifstream file(path);
 
     if (!file.is_open()) {
@@ -25,10 +25,10 @@ std::map<std::string, std::vector<std::string>> buildGraph(const std::string &pa
 
         auto [insertPos, insertSuccess] = adjacencyList.insert({nodeIdentifier, {}});
 
-        std::string nodeLinkedToIdentifier;
-        while (iss >> nodeLinkedToIdentifier) {
-            insertPos->second.push_back(nodeLinkedToIdentifier);
-            adjacencyList.insert({nodeLinkedToIdentifier, {}});
+        std::string neighboringNodeIdentifier;
+        while (iss >> neighboringNodeIdentifier) {
+            insertPos->second.push_back(neighboringNodeIdentifier);
+            adjacencyList.insert({neighboringNodeIdentifier, {}});
         }
     }
 

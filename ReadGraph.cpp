@@ -1,7 +1,7 @@
 #include "ReadGraph.h"
 
 
-std::map<std::string, std::vector<std::string>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType) {
+std::map<std::string, std::set<std::string>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType) {
     std::ifstream file(path);
 
     if (!file.is_open()) {
@@ -9,7 +9,7 @@ std::map<std::string, std::vector<std::string>> readGraph(const std::string &pat
         return {};
     }
 
-    std::map<std::string, std::vector<std::string>> adjacencyList;
+    std::map<std::string, std::set<std::string>> adjacencyList;
 
     std::string line;
     while (std::getline(file, line)) {
@@ -27,7 +27,7 @@ std::map<std::string, std::vector<std::string>> readGraph(const std::string &pat
 
         std::string neighboringNodeIdentifier;
         while (iss >> neighboringNodeIdentifier) {
-            insertPos->second.push_back(neighboringNodeIdentifier);
+            insertPos->second.insert(neighboringNodeIdentifier);
             adjacencyList.insert({neighboringNodeIdentifier, {}});
         }
     }

@@ -19,7 +19,7 @@ std::map<std::string, std::vector<std::string>> buildGraph(const std::string &pa
 
         std::istringstream iss(line);
         std::string nodeIdentifier;
-        if (!(iss >> nodeIdentifier)) {
+        if (!(iss >> nodeIdentifier)) { // line is empty
             continue;
         }
 

@@ -9,6 +9,15 @@
 
 #include "Node.h"
 
+struct Edge {
+    std::string destinationNodeIdentifier{};
+    int edgeWeight{};
+
+    bool operator<(const Edge &other) const {
+        return destinationNodeIdentifier < other.destinationNodeIdentifier;
+    }
+};
+
 enum class GraphEdgeType {
     undirected,
     directed
@@ -20,7 +29,7 @@ enum class GraphEdgeType {
  * @param graphEdgeType The type of edges present in the graph.
  * @return The adjacency list.
  */
-std::map<std::string, std::set<std::string>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType);
+std::map<std::string, std::set<Edge>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType);
 
 
 #endif //READGRAPH_H

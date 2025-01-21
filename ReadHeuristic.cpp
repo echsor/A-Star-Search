@@ -29,7 +29,7 @@ std::map<std::string, int> readHeuristic(const std::string &path) {
         }
     }
 
-    return heuristicMap;
-
     file.close();
+
+    return heuristicMap;
 }

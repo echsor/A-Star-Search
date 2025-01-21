@@ -1,9 +1,7 @@
 #include "ReadGraph.h"
 
 
-
-
-std::map<std::string, std::set<Edge>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType) {
+std::unordered_map<std::string, std::unordered_map<std::string, int>> readGraph(const std::string &path) {
     std::ifstream file(path);
 
     if (!file.is_open()) {
@@ -11,7 +9,7 @@ std::map<std::string, std::set<Edge>> readGraph(const std::string &path, const G
         return {};
     }
 
-    std::map<std::string, std::set<Edge>> adjacencyList;
+    std::unordered_map<std::string, std::unordered_map<std::string, int>> adjacencyList;
 
     std::string line;
     while (std::getline(file, line)) {
@@ -21,7 +19,8 @@ std::map<std::string, std::set<Edge>> readGraph(const std::string &path, const G
 
         std::istringstream iss(line);
         std::string nodeIdentifier;
-        if (!(iss >> nodeIdentifier)) { // line is empty
+        // line is empty
+        if (!(iss >> nodeIdentifier)) {
             continue;
         }
 

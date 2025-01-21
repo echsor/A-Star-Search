@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.28.3)
 project(A_star)
 
 set(CMAKE_CXX_STANDARD 23)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Werror -Wno-error=unused-variable -g")
+
 add_executable(A_star main.cpp
-        Node.cpp
-        Node.h
         AStar.cpp
         AStar.h
         ReadGraph.cpp

@@ -6,8 +6,7 @@
 #include <string>
 #include <map>
 #include <set>
-
-#include "Node.h"
+#include <unordered_map>
 
 struct Edge {
     std::string destinationNodeIdentifier{};
@@ -26,10 +25,9 @@ enum class GraphEdgeType {
 /**
  * Reads an adjacency list from a file.
  * @param path The path to the adjacency list
- * @param graphEdgeType The type of edges present in the graph.
  * @return The adjacency list.
  */
-std::map<std::string, std::set<Edge>> readGraph(const std::string &path, const GraphEdgeType graphEdgeType);
+std::unordered_map<std::string, std::unordered_map<std::string, int>> readGraph(const std::string &path);
 
 
 #endif //READGRAPH_H

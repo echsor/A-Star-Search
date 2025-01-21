@@ -1,4 +1,7 @@
 #include "ReadGraph.h"
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 
 std::unordered_map<std::string, std::unordered_map<std::string, int>> readGraph(const std::string &path) {

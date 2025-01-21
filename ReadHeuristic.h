@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include <iostream>
-#include <sstream>
+
 
 std::map<std::string, int> readHeuristic(const std::string &path);
 

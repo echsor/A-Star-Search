@@ -1,6 +1,7 @@
 #include "ReadHeuristic.h"
 
 #include <fstream>
+#include <sstream>
 
 std::map<std::string, int> readHeuristic(const std::string &path) {
     std::ifstream file(path);

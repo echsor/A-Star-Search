@@ -1,11 +1,7 @@
 #ifndef READGRAPH_H
 #define READGRAPH_H
-#include <fstream>
-#include <sstream>
-#include <iostream>
+
 #include <string>
-#include <map>
-#include <set>
 #include <unordered_map>
 
 struct Edge {

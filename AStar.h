@@ -132,6 +132,7 @@ std::optional<std::vector<T>> aStarSearch(const T &start, const T &goal,
 
     while (!frontier.empty()) {
         auto [nodeToExploreIdentifier, nodeToExploreCost] = frontier.getNextNodeToExplore();
+        visited.insert(nodeToExploreIdentifier);
 
         // We found the goal node! Build the path from start to the goal.
         if (nodeToExploreIdentifier == goal) {
@@ -146,8 +147,8 @@ std::optional<std::vector<T>> aStarSearch(const T &start, const T &goal,
         // explore the current node's neighbors
         for (const auto &[neighborNodeIdentifier, neighborEdgeWeight]:
              graph.at(nodeToExploreIdentifier)) {
-            // only consider unvisited nodes and skip cycles
-            if (visited.contains(neighborNodeIdentifier) || neighborNodeIdentifier == nodeToExploreIdentifier) {
+            // only consider unvisited nodes
+            if (visited.contains(neighborNodeIdentifier)) {
                 continue;
             }
             const int costToNeighbor = nodeToExploreCost

@@ -15,8 +15,8 @@
  */
 template<typename T>
 struct AStarNode {
-    T identifier{};
-    int costToHere{};
+    T identifier{}; // The unique identifier of the node.
+    int costToHere{}; // The cost from start to this node. Does not include any heuristic cost.
 };
 
 /**

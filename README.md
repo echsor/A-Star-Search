@@ -53,8 +53,8 @@ Frontier
 
 Visited
 
-|   |
-|---|
+| empty |
+|-------|
 
 Node to parent
 

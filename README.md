@@ -30,14 +30,14 @@ We maintain three data structures:
 - The main one is the **frontier**, it is an ordered vector. Order is maintained on insertion. We must also be able to
   update existing items in the frontier. The node to be explored next is **last** in the frontier.
 - A set of all nodes that we have **visited**. We never visit/explore the same node twice.
-- Map of **node to** their **parent node**. Used to building the final path.
+- Map of **node to** their **parent node**. Used to building the final path. Nodes are inserted or updated when we update the frontier. 
 
 ---
 
 ### Example
 
 Let's look at an example. Here we have a simple graph. We will pretend the nodes are different places and the edges
-are roads connection the places. There is also a lake in the middle which roads can not travel over (forget about
+are roads connecting the places. There is also a lake in the middle which roads can not travel over (forget about
 bridges).
 As the heuristic we will use the straight-line distance to the goal. This is what the dashed lines are for.
 
@@ -135,7 +135,7 @@ Node to parent
 ---
 
 We now explore node _L_ and discover the goal node. This doesn't mean that we are automatically done. We are only done
-once we chose the goal node to explore next. This is because there might still be a cheaper path to the goal node.
+once the node we are exploring is the goal node. This is because there might still be a cheaper path to the goal node.
 
 ![img_6.png](img_6.png)
 

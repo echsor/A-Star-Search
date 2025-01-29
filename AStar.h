@@ -89,7 +89,7 @@ public:
      * Add a new node to the frontier.
      * Assumes no node on the frontier already uses the identifier.
      * @param nodeToAdd The node to add to the frontier. Must have a unique identifier, but this isn't checked.
-     * @param totalCost The total cost (known cost + heursitic cost) from start to goal for this node.
+     * @param totalCost The total cost (known cost + heuristic cost) from start to goal for this node.
      */
     void addNode(AStarNode<T> nodeToAdd, const int totalCost) {
         auto it = std::lower_bound(frontier.begin(), frontier.end(), totalCost,

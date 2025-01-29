@@ -145,7 +145,7 @@ Frontier
 | Node | known cost to here | heuristic cost to goal | estimated total cost |
 |------|--------------------|------------------------|----------------------|
 | X    | 11                 | 16                     | 27                   |
-| G    | 24                 | 0                      | 24                   |
+| Goal | 24                 | 0                      | 24                   |
 
 Visited
 
